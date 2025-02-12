@@ -1,3 +1,5 @@
+import 'package:google_fonts/google_fonts.dart';
+
 import '/resources/widgets/theme_toggle_widget.dart';
 import '/bootstrap/extensions.dart';
 import '/resources/widgets/logo_widget.dart';
@@ -57,9 +59,11 @@ class _HomePageState extends NyPage<HomePage> {
           ).displayMedium(color: context.color.content),
           const Text("Micro-framework for Flutter", textAlign: TextAlign.center)
               .titleMedium(color: context.color.primaryAccent),
-          const Text("Build something amazing 💡", textAlign: TextAlign.center)
-              .bodyMedium()
-              .alignCenter(),
+          Text(
+            "Build something amazing 💡",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.anekDevanagari(),
+          ).bodyMedium().alignCenter(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,

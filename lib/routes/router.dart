@@ -1,3 +1,5 @@
+import '/resources/pages/sign_up_page.dart';
+import '/resources/pages/sign_in_page.dart';
 import '/resources/pages/not_found_page.dart';
 import '/resources/pages/home_page.dart';
 import 'package:nylo_framework/nylo_framework.dart';
@@ -20,7 +22,7 @@ import 'package:nylo_framework/nylo_framework.dart';
 |-------------------------------------------------------------------------- */
 
 appRouter() => nyRoutes((router) {
-      router.add(HomePage.path).initialRoute();
+      router.add(HomePage.path);
       // Add your routes here ...
 
       // router.add(NewPage.path, transition: PageTransitionType.fade);
@@ -33,4 +35,6 @@ appRouter() => nyRoutes((router) {
       //
       // });
       router.add(NotFoundPage.path).unknownRoute();
+      router.add(SignInPage.path).initialRoute();
+      router.add(SignUpPage.path);
     });
