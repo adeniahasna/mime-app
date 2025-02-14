@@ -2,45 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
-class EmailTextField extends StatefulWidget {
+class NameTextField extends StatefulWidget {
   final TextEditingController controller;
-  const EmailTextField({super.key, required this.controller});
+  const NameTextField({super.key, required this.controller});
 
   @override
-  createState() => _EmailTextFieldState();
+  createState() => _NameTextFieldState();
 }
 
-class _EmailTextFieldState extends NyState<EmailTextField> {
-  late FocusNode _emailFocusNode = FocusNode();
-  bool isEmailFocused = false;
+class _NameTextFieldState extends NyState<NameTextField> {
+  late FocusNode _nameFocusNode = FocusNode();
+  bool isNameFocused = false;
 
   @override
   void initState() {
     super.initState();
-    _emailFocusNode = FocusNode();
-    _emailFocusNode.addListener(() {
+    _nameFocusNode = FocusNode();
+    _nameFocusNode.addListener(() {
       setState(() {
-        isEmailFocused = _emailFocusNode.hasFocus;
+        isNameFocused = _nameFocusNode.hasFocus;
       });
     });
   }
 
   @override
   void dispose() {
-    _emailFocusNode.dispose();
+    _nameFocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget view(BuildContext context) {
-    return NyTextField.emailAddress(
+    return NyTextField.compact(
       controller: widget.controller,
-      focusNode: _emailFocusNode,
-      autoFocus: false,
+      labelText: "Full Name",
       labelStyle: GoogleFonts.anekDevanagari(color: const Color(0xFF6D6D6D)),
-      prefixIcon: Icon(Icons.email, color: Color(0xFF6D6D6D)),
+      autoFocus: false,
+      focusNode: _nameFocusNode,
+      prefixIcon: Icon(Icons.person, color: Color(0xFF6D6D6D)),
       backgroundColor:
-          isEmailFocused ? const Color(0xFFF8F5FF) : const Color(0xFFECECEC),
+          isNameFocused ? const Color(0xFFF8F5FF) : const Color(0xFFECECEC),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: Colors.transparent),
@@ -51,7 +52,7 @@ class _EmailTextFieldState extends NyState<EmailTextField> {
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: const Color(0xFF8F72E4), width: 2),
       ),
-      validationRules: "not_empty|email",
+      validationRules: "not_empty",
     );
   }
 }

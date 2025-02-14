@@ -1,3 +1,4 @@
+import '/resources/pages/task_list_page.dart';
 import '/resources/pages/sign_up_page.dart';
 import '/resources/pages/sign_in_page.dart';
 import '/resources/pages/not_found_page.dart';
@@ -35,6 +36,9 @@ appRouter() => nyRoutes((router) {
       //
       // });
       router.add(NotFoundPage.path).unknownRoute();
-      router.add(SignInPage.path).initialRoute();
-      router.add(SignUpPage.path);
+      router.add(SignInPage.path, transition: PageTransitionType.fade);
+      router.add(SignUpPage.path, transition: PageTransitionType.fade);
+      router
+          .add(TaskListPage.path, transition: PageTransitionType.topToBottom)
+          .initialRoute();
     });

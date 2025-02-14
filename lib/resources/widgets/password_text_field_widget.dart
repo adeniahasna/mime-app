@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
 class PasswordTextField extends StatefulWidget {
@@ -37,6 +38,9 @@ class _PasswordTextFieldState extends NyState<PasswordTextField> {
     return NyTextField.password(
       controller: widget.controller,
       obscureText: !isPasswordVisible,
+      labelStyle: GoogleFonts.anekDevanagari(color: const Color(0xFF6D6D6D)),
+      autoFocus: false,
+      passwordViewable: true,
       focusNode: _passFocusNode,
       prefixIcon: Icon(Icons.lock, color: Color(0xFF6D6D6D)),
       backgroundColor:
@@ -49,9 +53,9 @@ class _PasswordTextFieldState extends NyState<PasswordTextField> {
         borderRadius: BorderRadius.circular(20),
         borderSide: BorderSide(color: const Color(0xFF8F72E4), width: 2),
       ),
-      contentPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-      style: TextStyle(
-        fontSize: 15,
+      contentPadding: EdgeInsets.symmetric(vertical: 19, horizontal: 30),
+      style: GoogleFonts.anekDevanagari(
+        fontSize: 14,
         color: Color(0xFF6D6D6D),
       ),
       validationRules: "not_empty",

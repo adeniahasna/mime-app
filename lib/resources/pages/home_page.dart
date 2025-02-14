@@ -42,9 +42,10 @@ class _HomePageState extends NyPage<HomePage> {
           showToastSuccess(title: "Hello 👋", description: "Welcome to Nylo");
 
           // Uncomment the code below to send a push notifications
-          // await PushNotification.sendNotification(
-          //     title: "Hello 👋", body: "Welcome to Nylo",
-          // );
+          await PushNotification.sendNotification(
+            title: "Hello 👋",
+            body: "Welcome to Nylo",
+          );
         },
         child: const Icon(Icons.notifications),
       ),
@@ -53,7 +54,10 @@ class _HomePageState extends NyPage<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Logo(),
+          const Logo(
+            height: 100,
+            width: 100,
+          ),
           Text(
             getEnv("APP_NAME"),
           ).displayMedium(color: context.color.content),

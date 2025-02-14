@@ -1,5 +1,5 @@
 class AssetImages {
-  static const String logo = 'mime_logo.png';
+  static const String logo = 'public/images/mime_logo.png';
   static const String logoWhite = 'mime_white_logo.png';
   static const String background = 'public/images/basic/background.png';
   static const String authBg = 'public/images/basic/auth_background.png';

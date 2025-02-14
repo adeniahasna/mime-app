@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/resources/pages/task_list_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nylo_framework/nylo_framework.dart';
 
@@ -45,11 +46,14 @@ class _SignInButtonState extends NyState<SignInButton> {
   Widget view(BuildContext context) {
     return MaterialButton(
       onPressed: () {
-        NyLogger.info("Sign in button pressed !");
+        if (isValid) {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => TaskListPage()));
+          NyLogger.info("Sign In");
+        }
       },
       color: isValid ? Color(0xFF4413D2) : Color(0xFFD1C8FF),
       textColor: Colors.white,
-      elevation: 5,
       padding: EdgeInsets.symmetric(vertical: 13, horizontal: 135),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),

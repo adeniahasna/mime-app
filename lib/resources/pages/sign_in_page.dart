@@ -119,7 +119,6 @@ class _SignInPageState extends NyPage<SignInPage> {
       child: Center(
         child: Container(
           decoration: BoxDecoration(
-            // color: const Color(0xFF7A5656),
             borderRadius: BorderRadius.circular(10),
           ),
           width: 360,
@@ -127,9 +126,9 @@ class _SignInPageState extends NyPage<SignInPage> {
           child: Column(
             children: [
               Text(
-                "Please Sign In",
+                "Sign In",
                 style: GoogleFonts.anekDevanagari(
-                    fontSize: 33,
+                    fontSize: 32,
                     color: Colors.black,
                     fontWeight: FontWeight.w500),
               ).alignCenter(),
@@ -144,10 +143,11 @@ class _SignInPageState extends NyPage<SignInPage> {
                   child: Text(
                     "Forget Password ?",
                     style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.indigo[600],
-                        fontWeight: FontWeight.bold,
-                        fontFamily: GoogleFonts.anekDevanagari().fontFamily),
+                      fontSize: 13,
+                      color: Colors.indigo[600],
+                      fontWeight: FontWeight.bold,
+                      fontFamily: GoogleFonts.anekDevanagari().fontFamily,
+                    ),
                   ),
                 ),
               ),
@@ -155,6 +155,7 @@ class _SignInPageState extends NyPage<SignInPage> {
               SignInButton(
                   controllerEmail: controllerEmail,
                   controllerPassword: controllerPassword),
+              SizedBox(height: 100),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
